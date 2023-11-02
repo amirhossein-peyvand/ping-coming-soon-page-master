@@ -13,6 +13,12 @@ html {
 
 body {
   min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+img {
+  display: block;
 }
 
 #root {

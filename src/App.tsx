@@ -1,5 +1,6 @@
-import logo from "./assets/logo.svg";
+import "./sass/App.scss";
 import illustration from "./assets/illustration-dashboard.png";
+import logo from "./assets/logo.svg";
 
 function App() {
   return (
@@ -28,15 +29,15 @@ function App() {
       </main>
       <footer>
         <section className="iconsContainer">
-          <span>
+          <a href="https://twitter.com/" target="_blank">
             <i className="fa-brands fa-facebook-f"></i>
-          </span>
-          <span>
+          </a>
+          <a href="https://facebook.com" target="_blank">
             <i className="fa-brands fa-twitter"></i>
-          </span>
-          <span>
+          </a>
+          <a href="https://instagram.com" target="_blank">
             <i className="fa-brands fa-instagram"></i>
-          </span>
+          </a>
         </section>
         <p>&copy; Copyright Ping. All rights reserved.</p>
       </footer>

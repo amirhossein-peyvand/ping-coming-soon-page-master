@@ -1,0 +1,157 @@
+@import "./colors.scss";
+
+.app {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  row-gap: 6rem;
+  text-align: center;
+  width: 90%;
+
+  header {
+    img {
+      width: 8rem;
+    }
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4.5rem;
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      row-gap: 2.5rem;
+
+      .titleDescContainer {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+
+        h1 {
+          font-size: 2.3rem;
+          font-weight: 300;
+          color: $gray;
+          letter-spacing: 0.2px;
+          word-spacing: 1px;
+
+          span {
+            color: $very-dark-blue;
+            font-weight: 700;
+          }
+        }
+
+        p {
+          font-size: 1.1rem;
+          color: $gray;
+          font-weight: 700;
+          letter-spacing: 0.5px;
+        }
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 1rem;
+
+        .formGroup {
+          width: 100%;
+
+          input {
+            border-radius: 30px;
+            border: 2px solid $pale-blue;
+            color: $blue;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            outline: none;
+            padding: 1.1rem 1.1rem 1.1rem 2rem;
+            transition: all 0.3s;
+            width: 90%;
+          }
+
+          input::placeholder {
+            color: $blue;
+            font-size: 1.1rem;
+            letter-spacing: 0.4px;
+            opacity: 0.3;
+          }
+
+          input:focus {
+            border-color: $blue;
+          }
+        }
+
+        button {
+          background-color: $blue;
+          border-radius: 30px;
+          border: none;
+          color: $white;
+          cursor: pointer;
+          font-size: 1.1rem;
+          letter-spacing: 0.4px;
+          padding: 1.1rem;
+          transition: all 0.3s;
+          width: 90%;
+        }
+
+        button:hover {
+          opacity: 0.9;
+        }
+      }
+    }
+
+    .illustrationImageContainer {
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+
+    .iconsContainer {
+      column-gap: 1rem;
+      display: flex;
+      justify-content: center;
+
+      a {
+        align-items: center;
+        border-radius: 50%;
+        border: 1px solid $pale-blue;
+        display: flex;
+        height: 3rem;
+        justify-content: center;
+        text-decoration: none;
+        width: 3rem;
+
+        i {
+          font-size: 1.4rem;
+          color: $blue;
+        }
+      }
+
+      a:hover {
+        background-color: $blue;
+        border-color: $blue;
+
+        i {
+          color: $white;
+        }
+      }
+    }
+
+    p {
+      color: $very-dark-blue;
+      font-size: 0.9rem;
+      letter-spacing: 0.4px;
+      word-spacing: 0.5px;
+    }
+  }
+}
