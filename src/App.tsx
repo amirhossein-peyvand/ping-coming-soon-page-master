@@ -26,7 +26,20 @@ function App() {
           <img src={illustration} alt="illustration" />
         </section>
       </main>
-      <footer></footer>
+      <footer>
+        <section className="iconsContainer">
+          <span>
+            <i className="fa-brands fa-facebook-f"></i>
+          </span>
+          <span>
+            <i className="fa-brands fa-twitter"></i>
+          </span>
+          <span>
+            <i className="fa-brands fa-instagram"></i>
+          </span>
+        </section>
+        <p>&copy; Copyright Ping. All rights reserved.</p>
+      </footer>
     </div>
   );
 }
