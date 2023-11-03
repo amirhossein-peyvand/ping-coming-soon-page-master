@@ -155,3 +155,61 @@
     }
   }
 }
+
+@media screen and (min-width: 600px) {
+  .app {
+    width: 70rem;
+
+    header {
+      img {
+        width: 10rem;
+      }
+    }
+
+    main {
+      .content {
+        .titleDescContainer {
+          h1 {
+            font-size: 3.3rem;
+          }
+
+          p {
+            font-size: 2rem;
+          }
+        }
+
+        form {
+          .formGroup {
+            input {
+              font-size: 2rem;
+            }
+            input::placeholder {
+              font-size: 2rem;
+            }
+          }
+
+          button {
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+
+    footer {
+      .iconsContainer {
+        a {
+          width: 5rem;
+          height: 5rem;
+
+          i {
+            font-size: 2rem;
+          }
+        }
+      }
+
+      p {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
