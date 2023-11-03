@@ -1,8 +1,36 @@
-import "./sass/App.scss";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { FieldValues, useForm } from "react-hook-form";
+import z from "zod";
 import illustration from "./assets/illustration-dashboard.png";
 import logo from "./assets/logo.svg";
+import "./sass/App.scss";
+import { useMediaQuery } from "react-responsive";
+
+const schema = z.object({
+  email: z
+    .string()
+    .min(8, { message: "Please provide a valid email address" })
+    .max(40, { message: "Please provide a valid email address" })
+    .regex(
+      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+      { message: "Please provide a valid email address" }
+    ),
+});
+type FormData = z.infer<typeof schema>;
 
 function App() {
+  const isGreaterThan1000px = useMediaQuery({ query: "(min-width:1000px)" });
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormData>({ resolver: zodResolver(schema) });
+  const onSubmit = (event: FieldValues) => console.log(event);
+
+  const errorMessage = errors.email && (
+    <p className="errorMessage">{errors.email.message}</p>
+  );
+
   return (
     <div className="app">
       <header>
@@ -16,11 +44,17 @@ function App() {
             </h1>
             <p className="desc">Subscribe and get notified</p>
           </div>
-          <form>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <div className="formGroup">
-              <input type="email" placeholder="Your email address..." />
+              <input
+                {...register("email")}
+                type="email"
+                placeholder="Your email address..."
+              />
+              {!isGreaterThan1000px && errorMessage}
+              <button className="submitBtn">Notify Me</button>
             </div>
-            <button className="submitBtn">Notify Me</button>
+            {isGreaterThan1000px && errorMessage}
           </form>
         </section>
         <section className="illustrationImageContainer">
